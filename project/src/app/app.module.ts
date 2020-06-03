@@ -10,10 +10,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
   MatSortModule, MatTableModule } from "@angular/material";
 
+import { ChartsModule } from 'ng2-charts';
+import { IndicatorGraphComponent } from './components/indicator-graph/indicator-graph.component';
+import { StockGridComponent } from './components/stock-grid/stock-grid.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent
+    DashboardComponent,
+    IndicatorGraphComponent,
+    StockGridComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +30,8 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ChartsModule
   ],
   providers: [
     ApiService
