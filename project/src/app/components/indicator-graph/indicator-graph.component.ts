@@ -9,7 +9,29 @@ export class IndicatorGraphComponent implements OnInit {
 
   barChartOptions = {
     scaleShowVerticalLines: false,
-    responsive: true
+    responsive: true,
+    legend: {
+      labels: {
+        fontColor: 'white'
+      }
+    },
+    title: {
+        display: true,
+        fontColor: 'white',
+        text: 'Indicadores'
+    },
+    scales: {
+      yAxes: [{
+          ticks: {
+              fontColor: 'white'
+          },
+      }],
+      xAxes: [{
+            ticks: {
+                fontColor: 'white'
+            },
+        }]
+    }
   };
 
   barChartLabels = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'];

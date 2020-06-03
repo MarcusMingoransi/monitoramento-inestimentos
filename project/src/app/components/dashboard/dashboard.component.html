@@ -1,7 +1,7 @@
-<section>
+<section class="indicators">
   <app-indicator-graph></app-indicator-graph>
 </section>
 
-<section>
-  <app-stock-grid [dataSource]="dataSource"></app-stock-grid>
+<section *ngIf="dataSource.length">
+  <app-stock-grid [data]="dataSource"></app-stock-grid>
 </section>

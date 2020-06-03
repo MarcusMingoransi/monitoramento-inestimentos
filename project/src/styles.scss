@@ -31,4 +31,6 @@ $project-theme: mat-light-theme($project-primary, $project-accent, $project-warn
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+@import './assets/scss/variables';
 @import './assets/scss/dashboard';
+@import './assets/scss/indicator';
