@@ -2,29 +2,29 @@
 
   <div class="indicators-data">
     <div class="container">
-      <mat-grid-list cols="12" [gutterSize]="'10px'" (window:resize)="onResize($event)">
-        <mat-grid-tile [colspan]="4">
+      <mat-grid-list [cols]="cols" [gutterSize]="'10px'" rowHeight="8rem">
+        <mat-grid-tile>
           <div class="card">
             <span *ngIf="!stock?.cod">Empresa</span>
             {{stock?.cod}}<span class="indicators-value">{{stock?.name}}</span>
           </div>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="2">
+        <mat-grid-tile>
           <div class="card card-empty">
             Valor Atual<span class="indicators-value">{{stock?.price | currency:'BRL':true}}</span>
           </div>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="2">
+        <mat-grid-tile>
           <div class="card card-empty">
             Dividend Yield Mês<span class="indicators-value">{{stock?.dyMonth | percent}}</span>
           </div>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="2">
+        <mat-grid-tile>
           <div class="card card-empty">
             Dividend Yield<span class="indicators-value">{{stock?.dyYear | percent}}</span>
           </div>
         </mat-grid-tile>
-        <mat-grid-tile [colspan]="2">
+        <mat-grid-tile>
           <div class="card card-empty">
             P/VP<span class="indicators-value">{{stock?.pvp | percent}}</span>
           </div>
