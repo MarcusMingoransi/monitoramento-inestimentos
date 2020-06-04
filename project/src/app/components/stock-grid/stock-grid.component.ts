@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, Input, ViewChild, Output, EventEmitter, AfterViewInit } from '@angular/core';
 import { MatPaginator, MatTableDataSource, MatSort, MatGridList } from '@angular/material';
 import { IStock } from 'src/app/shared/models/IStock';
 
@@ -7,7 +7,7 @@ import { IStock } from 'src/app/shared/models/IStock';
   templateUrl: './stock-grid.component.html',
   styleUrls: ['./stock-grid.component.scss']
 })
-export class StockGridComponent {
+export class StockGridComponent implements AfterViewInit {
 
   @Input() data: IStock[];
   @Output() rowClick = new EventEmitter<any>();

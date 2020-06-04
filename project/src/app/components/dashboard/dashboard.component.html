@@ -1,5 +1,4 @@
 <section class="indicators">
-
   <div class="indicators-data">
     <div class="container">
       <mat-grid-list [cols]="cols" [gutterSize]="'10px'" rowHeight="8rem">
@@ -11,7 +10,7 @@
         </mat-grid-tile>
         <mat-grid-tile>
           <div class="card card-empty">
-            Valor Atual<span class="indicators-value">{{stock?.price | currency:'BRL':true}}</span>
+            Valor Atual<span class="indicators-value">{{stock?.price | currency:'BRL'}}</span>
           </div>
         </mat-grid-tile>
         <mat-grid-tile>
@@ -33,28 +32,8 @@
     </div>
   </div>
   <app-indicator-graph *ngIf="dataSource.length" [stock]="stock"></app-indicator-graph>
-
-
 </section>
 
 <section class="stock-grid">
   <app-stock-grid [data]="dataSource" *ngIf="dataSource.length" (rowClick)="onRowClick($event)"></app-stock-grid>
 </section>
-
-<!-- <div class="container">
-  <mat-grid-list cols="2">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>
-      <app-indicator-graph></app-indicator-graph>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div> -->
-
-<!-- <div class="container">
-    <mat-grid-list cols="2">
-      <mat-grid-tile>1</mat-grid-tile>
-      <mat-grid-tile>
-        <app-indicator-graph></app-indicator-graph>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div> -->
