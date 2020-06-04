@@ -2,28 +2,31 @@
 
   <div class="indicators-data">
     <div class="container">
-      <mat-grid-list cols="12" [gutterSize]="'10px'">
+      <mat-grid-list cols="12" [gutterSize]="'10px'" (window:resize)="onResize($event)">
         <mat-grid-tile [colspan]="4">
-          <span><strong>{{stock?.cod}}</strong> {{stock?.name}}</span>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="2">
           <div class="card">
-            <p>Valor Atual</p>{{stock?.price}}
+            <span *ngIf="!stock?.cod">Empresa</span>
+            {{stock?.cod}}<span class="indicators-value">{{stock?.name}}</span>
           </div>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="2">
           <div class="card card-empty">
-            <p>Dividend Yield Mês</p>{{stock?.dyMonth}}%
+            Valor Atual<span class="indicators-value">{{stock?.price | currency:'BRL':true}}</span>
           </div>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="2">
           <div class="card card-empty">
-            <p>Dividend Yield</p>{{stock?.dyYear}}%
+            Dividend Yield Mês<span class="indicators-value">{{stock?.dyMonth | percent}}</span>
           </div>
         </mat-grid-tile>
         <mat-grid-tile [colspan]="2">
           <div class="card card-empty">
-            <p>P/VP</p>{{stock?.pvp}}
+            Dividend Yield<span class="indicators-value">{{stock?.dyYear | percent}}</span>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2">
+          <div class="card card-empty">
+            P/VP<span class="indicators-value">{{stock?.pvp | percent}}</span>
           </div>
         </mat-grid-tile>
       </mat-grid-list>

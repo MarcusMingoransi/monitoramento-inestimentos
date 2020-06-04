@@ -58,9 +58,6 @@ export class IndicatorGraphComponent implements OnInit {
   barChartData = [
     {data: [65, 59, 80, 81, 56, 55, 40, 74, 68, 60, 62, 76], label: 'Valor'},
   ];
-  // barChartData = [
-  //   {data: [65, 59, 80, 81, 56, 55, 40, 74, 68, 60, 62, 76], label: this.stock.cod ? this.stock.cod : 'Ação'},
-  // ];
 
   constructor() { }
 
@@ -68,10 +65,8 @@ export class IndicatorGraphComponent implements OnInit {
   }
 
   updateChart(stock: IStock) {
-    console.log(stock);
     if (stock) {
       this.barChartData[0].data = this.stock.apprLastYear;
-      console.log(this.barChartData);
     }
   }
 

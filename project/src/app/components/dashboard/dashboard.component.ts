@@ -22,13 +22,12 @@ export class DashboardComponent implements OnInit {
     // };
     const headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
     this.apiService.get('http://1489o.mocklab.io/stocks').subscribe((result) => {
-      console.log(result);
       this.dataSource = result['stocks'];
+      this.stock = this.dataSource[0];
     });
   }
 
   onRowClick(stock: IStock) {
-    console.log(stock);
     this.stock = stock;
   }
 

@@ -16,13 +16,15 @@ import { StockGridComponent } from './components/stock-grid/stock-grid.component
 
 import {MatGridListModule, MatGridList} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import { PercentPipe } from './shared/pipes/percent.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     IndicatorGraphComponent,
-    StockGridComponent
+    StockGridComponent,
+    PercentPipe
   ],
   imports: [
     BrowserModule,

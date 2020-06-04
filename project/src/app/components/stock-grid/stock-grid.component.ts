@@ -35,8 +35,6 @@ export class StockGridComponent {
     this.dataSource = new MatTableDataSource(this.data);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-
-    console.log(this.rowClick);
   }
 
   applyFilter(filterValue: string) {
@@ -46,7 +44,6 @@ export class StockGridComponent {
   }
 
   onRowClick(stock: IStock): void {
-    console.log(stock);
     this.rowClick.emit(stock);
   }
 }
