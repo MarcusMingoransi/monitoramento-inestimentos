@@ -1,4 +1,8 @@
 .indicators {
   background-color: $bg-indicator;
   padding: 30px 0;
+  &-data {
+    background-color: $bg-indicator-dark;
+    padding: 15px 0;
+  }
 }

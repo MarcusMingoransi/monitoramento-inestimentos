@@ -8,7 +8,6 @@ import { IStock } from 'src/app/shared/models/IStock';
 })
 export class IndicatorGraphComponent implements OnInit {
 
-  // @Input() stock: IStock;
   private _stock: IStock;
 
     @Input() set stock(value: IStock) {
@@ -24,10 +23,12 @@ export class IndicatorGraphComponent implements OnInit {
   barChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true,
+    maintainAspectRatio: false,
     legend: {
       labels: {
-        fontColor: 'white'
-      }
+        fontColor: 'white',
+      },
+      display: false
     },
     title: {
         display: true,
@@ -37,7 +38,10 @@ export class IndicatorGraphComponent implements OnInit {
     scales: {
       yAxes: [{
           ticks: {
-              fontColor: 'white'
+              fontColor: 'white',
+              callback: (value, index, values) => {
+                return `${value}`;
+              }
           },
       }],
       xAxes: [{
@@ -52,7 +56,7 @@ export class IndicatorGraphComponent implements OnInit {
   barChartType = 'line';
   barChartLegend = true;
   barChartData = [
-    {data: [65, 59, 80, 81, 56, 55, 40, 74, 68, 60, 62, 76], label: 'Ação Atual'},
+    {data: [65, 59, 80, 81, 56, 55, 40, 74, 68, 60, 62, 76], label: 'Valor'},
   ];
   // barChartData = [
   //   {data: [65, 59, 80, 81, 56, 55, 40, 74, 68, 60, 62, 76], label: this.stock.cod ? this.stock.cod : 'Ação'},

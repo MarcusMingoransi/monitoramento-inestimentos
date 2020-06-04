@@ -1,0 +1,13 @@
+.card {
+  border-radius: .35rem;
+  background-color: $white;
+  width: 200px;
+  height: 80%;
+  color: $bg-indicator;
+  padding: 5px;
+  &-empty {
+    background-color: transparent;
+    border: 2px solid $bg-indicator;
+    color: $white;
+  }
+}
