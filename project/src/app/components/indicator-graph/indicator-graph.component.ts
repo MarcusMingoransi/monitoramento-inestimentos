@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { IStock } from 'src/app/shared/models/IStock';
 
 @Component({
   selector: 'app-indicator-graph',
@@ -6,6 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./indicator-graph.component.scss']
 })
 export class IndicatorGraphComponent implements OnInit {
+
+  // @Input() stock: IStock;
+  private _stock: IStock;
+
+    @Input() set stock(value: IStock) {
+
+       this._stock = value;
+       this.updateChart(this._stock);
+    }
+
+    get stock(): IStock {
+        return this._stock;
+    }
 
   barChartOptions = {
     scaleShowVerticalLines: false,
@@ -39,12 +53,22 @@ export class IndicatorGraphComponent implements OnInit {
   barChartLegend = true;
   barChartData = [
     {data: [65, 59, 80, 81, 56, 55, 40, 74, 68, 60, 62, 76], label: 'Ação Atual'},
-    {data: [28, 48, 40, 19, 86, 27, 88, 81, 85, 74, 66, 70], label: 'Ibovespa'}
   ];
+  // barChartData = [
+  //   {data: [65, 59, 80, 81, 56, 55, 40, 74, 68, 60, 62, 76], label: this.stock.cod ? this.stock.cod : 'Ação'},
+  // ];
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  updateChart(stock: IStock) {
+    console.log(stock);
+    if (stock) {
+      this.barChartData[0].data = this.stock.apprLastYear;
+      console.log(this.barChartData);
+    }
   }
 
 }

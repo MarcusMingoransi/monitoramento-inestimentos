@@ -14,6 +14,9 @@ import { ChartsModule } from 'ng2-charts';
 import { IndicatorGraphComponent } from './components/indicator-graph/indicator-graph.component';
 import { StockGridComponent } from './components/stock-grid/stock-grid.component';
 
+import {MatGridListModule, MatGridList} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +34,8 @@ import { StockGridComponent } from './components/stock-grid/stock-grid.component
     MatPaginatorModule,
     MatSortModule,
     MatProgressSpinnerModule,
+    MatGridListModule,
+    MatCardModule,
     ChartsModule
   ],
   providers: [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/shared/api-service.service';
 import { HttpHeaders } from '@angular/common/http';
+import { IStock } from 'src/app/shared/models/IStock';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -8,6 +9,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
 
+  stock: IStock;
   dataSource = [];
 
   constructor(private apiService: ApiService) {}
@@ -23,6 +25,11 @@ export class DashboardComponent implements OnInit {
       console.log(result);
       this.dataSource = result['stocks'];
     });
+  }
+
+  onRowClick(stock: IStock) {
+    console.log(stock);
+    this.stock = stock;
   }
 
 }

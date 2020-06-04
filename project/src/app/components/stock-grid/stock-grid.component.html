@@ -23,10 +23,20 @@
       <mat-cell *matCellDef="let element"> {{element.price}} </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="dyMonth">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> DY Mês </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.dyMonth}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="pvp">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> P/VP </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.pvp}} </mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;">
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)">
     </mat-row>
   </mat-table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 50]"></mat-paginator>
 </div>

@@ -1,7 +1,55 @@
 <section class="indicators">
-  <app-indicator-graph></app-indicator-graph>
+
+  <div class="container">
+    <mat-grid-list cols="5">
+      <mat-grid-tile>
+        <span><strong>{{stock?.cod}}</strong> {{stock?.name}}</span>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <p>Valor Atual</p>{{stock?.price}}
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <p>Dividend Yield Mês</p>{{stock?.dyMonth}}%
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <p>Dividend Yield</p>{{stock?.dyYear}}%
+        </mat-card>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card>
+          <p>P/VP</p>{{stock?.pvp}}
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+  <app-indicator-graph *ngIf="dataSource.length" [stock]="stock"></app-indicator-graph>
+
+
 </section>
 
-<section *ngIf="dataSource.length">
-  <app-stock-grid [data]="dataSource"></app-stock-grid>
+<section >
+  <app-stock-grid [data]="dataSource" *ngIf="dataSource.length" (rowClick)="onRowClick($event)"></app-stock-grid>
 </section>
+
+<!-- <div class="container">
+  <mat-grid-list cols="2">
+    <mat-grid-tile>1</mat-grid-tile>
+    <mat-grid-tile>
+      <app-indicator-graph></app-indicator-graph>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div> -->
+
+<!-- <div class="container">
+    <mat-grid-list cols="2">
+      <mat-grid-tile>1</mat-grid-tile>
+      <mat-grid-tile>
+        <app-indicator-graph></app-indicator-graph>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div> -->
