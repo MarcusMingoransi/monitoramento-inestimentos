@@ -13,20 +13,10 @@ export class StockGridComponent implements AfterViewInit {
   @Output() rowClick = new EventEmitter<any>();
 
   displayedColumns: string[] = ['cod', 'name', 'price', 'dyMonth', 'pvp'];
-  dataSource: MatTableDataSource<IStock>;
+  dataSource: MatTableDataSource<IStock> = new MatTableDataSource<IStock>();
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-
-  @ViewChild('grid') grid: MatGridList;
-
-  gridByBreakpoint = {
-    xl: 8,
-    lg: 6,
-    md: 4,
-    sm: 2,
-    xs: 1
-  };
 
   constructor() {
   }
