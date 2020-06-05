@@ -35,5 +35,6 @@
 </section>
 
 <section class="stock-grid">
+  <h3 class="grid-title">Lista de Ações</h3>
   <app-stock-grid [data]="dataSource" *ngIf="dataSource.length" (rowClick)="onRowClick($event)"></app-stock-grid>
 </section>
